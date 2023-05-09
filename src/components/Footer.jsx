@@ -111,7 +111,7 @@ const Footer = () => {
           >
             Made with love —
             <a
-              href="https://twitter.com/knyttneve"
+              href="https://github.com/antirmenel"
               rel="noopener noreferrer"
               className=" ml-1"
               target="_blank"
