@@ -39,7 +39,7 @@ function Trends() {
           <input
             type="text"
             className="border dark:bg-dark  border-gray-400 py-2 px-4  w-full text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-            placeholder="Search by recipe name"
+            placeholder="search by recipe name"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
