@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AiFillCloseCircle } from "react-icons/ai";
+import variants from "./variants";
 
-function CTA() {
+const CTA = () => {
   const [email, setEmail] = useState("");
   const [show, setShow] = useState(false);
-  const [data, setData] = useState({
-    status: null,
-    message: "",
-  });
+  const [data, setData] = useState({ status: null, message: "" });
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -16,11 +14,12 @@ function CTA() {
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
+
+      if (!res.ok) throw new Error("Network response was not ok");
+
       const { status, message } = await res.json();
 
       setData({ status, message });
@@ -29,11 +28,6 @@ function CTA() {
     } catch (error) {
       console.error(error);
     }
-  };
-
-  const variants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -60,11 +54,11 @@ function CTA() {
         </motion.p>
         {show && (
           <motion.div
-            className={`relative ${
-              data.status === 409 ? "bg-red-100" : "bg-green-100"
-            } border-t-4 ${
-              data.status === 409 ? "border-red-500" : "border-green-500"
-            } rounded-b text-green-900 px-4 py-3 shadow-md mb-4`}
+            className={`relative bg-${
+              data.status === 409 ? "red" : "green"
+            }-100 border-t-4 border-${
+              data.status === 409 ? "red" : "green"
+            }-500 rounded-b text-green-900 px-4 py-3 shadow-md mb-4`}
             initial="hidden"
             animate="visible"
             variants={variants}
@@ -81,7 +75,6 @@ function CTA() {
             </div>
           </motion.div>
         )}
-
         <motion.form
           onSubmit={sendEmail}
           className="flex flex-col lg:flex-row lg:w-2/3 w-full mx-auto px-8 space-y-4 sm:space-y-0 sm:space-x-4 sm:px-0 items-end"
@@ -115,6 +108,6 @@ function CTA() {
       </div>
     </section>
   );
-}
+};
 
 export default CTA;
