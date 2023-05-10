@@ -6,27 +6,22 @@ const CTA = () => {
   const [email, setEmail] = useState("");
   const [show, setShow] = useState(false);
   const [data, setData] = useState({ status: null, message: "" });
-
   const sendEmail = async (e) => {
     e.preventDefault();
-
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      if (!res.ok) throw new Error("Network response was not ok");
-
-      const { status, message } = await res.json();
-
-      setData({ status, message });
-      setShow(true);
-      setEmail("");
-    } catch (error) {
-      console.error(error);
-    }
+    const res = await fetch("/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    const { status } = res;
+    const message =
+      status === 409
+        ? "Email already exists"
+        : "Thank you for subscribing to our newsletter! We're excited to share our latest news, updates, and special recipes with you.";
+    setShow(true);
+    setData({ status, message });
+    setEmail("");
+    console.log(`Show state set to true for ${status} status`);
   };
 
   return (
