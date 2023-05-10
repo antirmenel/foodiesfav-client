@@ -22,6 +22,12 @@ const CTA = () => {
     setData({ status, message });
     setEmail("");
     console.log(`Show state set to true for ${status} status`);
+      // Check for errors
+  // eslint-disable-next-line no-undef
+  if (chrome.runtime.lastError) {
+    // eslint-disable-next-line no-undef
+    console.error(chrome.runtime.lastError);
+  }
   };
 
   return (
