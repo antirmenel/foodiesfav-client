@@ -12,6 +12,9 @@ React Icons - A collection of icons for React
 Chat GPT - A language model for generating text
 Leonardo AI - An AI-powered image editor
 
+The website is built with React Router DOM, allowing for easy navigation and organization of the website's pages.
+
+Check out the live preview of the website at https://foodiesfav.onrender.com/.
 
 If you have any questions, comments, or suggestions regarding the project, please do not hesitate to contact me via email.
 I would love to hear from you and I'm always open to feedback and collaboration opportunities.
