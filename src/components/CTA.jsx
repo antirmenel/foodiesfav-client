@@ -23,10 +23,10 @@ const CTA = () => {
     setData({ status, message });
     setEmail("");
     console.log(`Show state set to true for ${status} status`);
-      // Check for errors
-  if (chrome.runtime.lastError) {
-    console.error(chrome.runtime.lastError);
-  }
+    // Check for errors
+    if (typeof chrome !== "undefined" && chrome.runtime.lastError) {
+      console.error(chrome.runtime.lastError);
+    }
   };
 
   return (
