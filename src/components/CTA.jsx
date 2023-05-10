@@ -8,13 +8,15 @@ const CTA = () => {
   const [data, setData] = useState({ status: null, message: "" });
   const sendEmail = async (e) => {
     e.preventDefault();
-    console.log("Email:", email); // added console.log
+    console.log("Email:", email);
     const res = await fetch("/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
     });
-    console.log("Response:", res); // added console.log
+    const responseBody = await res.text();
+    console.log("Response:", responseBody);
+    console.log("Response:", res);
     const { status } = res;
     const message =
       status === 409
