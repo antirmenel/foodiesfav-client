@@ -6,7 +6,6 @@ const CTA = () => {
   const [email, setEmail] = useState("");
   const [show, setShow] = useState(false);
   const [data, setData] = useState({ status: null, message: "" });
-  const chrome = window.chrome;
   const sendEmail = async (e) => {
     e.preventDefault();
     const res = await fetch("/register", {
@@ -23,10 +22,6 @@ const CTA = () => {
     setData({ status, message });
     setEmail("");
     console.log(`Show state set to true for ${status} status`);
-    // Check for errors
-    if (typeof chrome !== "undefined" && chrome.runtime.lastError) {
-      console.error(chrome.runtime.lastError);
-    }
   };
 
   return (
