@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
-import {privacy} from "../Data";
+import { privacy } from "../Data";
 
 const PrivacyPolicy = () => {
   const currentDate = new Date().toDateString(); // Insert current date here

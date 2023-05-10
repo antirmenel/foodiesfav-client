@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineArrowRight } from "react-icons/ai";
 function Quick() {
   const [searchTerm, setSearchTerm] = useState("");
-  const quickRecipes = allRecipes.filter(
-    (recipe) => recipe.type === "quick"
-  );
+  const quickRecipes = allRecipes.filter((recipe) => recipe.type === "quick");
   const filteredRecipes = quickRecipes.filter((recipe) => {
     return recipe.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
@@ -28,7 +26,8 @@ function Quick() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-Quick and Easy Recipes        </motion.h1>
+          Quick and Easy Recipes{" "}
+        </motion.h1>
         <motion.div
           className="mb-6"
           initial={{ y: -50, opacity: 0 }}

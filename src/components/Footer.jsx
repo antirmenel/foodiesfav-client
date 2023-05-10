@@ -119,7 +119,6 @@ const Footer = () => {
               Menel Antir
             </a>
           </motion.p>
-       
         </motion.div>
       </motion.div>
     </footer>

@@ -28,7 +28,7 @@ function Occasions() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-FOOD FOR SPECIAL OCCASIONS
+          FOOD FOR SPECIAL OCCASIONS
         </motion.h1>
         <motion.div
           className="mb-6"

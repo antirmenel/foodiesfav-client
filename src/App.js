@@ -26,7 +26,6 @@ function App() {
           <Route path="/occasions" element={<Occasions />} />
           <Route path="/quick" element={<Quick />} />
           <Route path="/trends" element={<Trends />} />
-
         </Routes>
       </div>
     </Router>
