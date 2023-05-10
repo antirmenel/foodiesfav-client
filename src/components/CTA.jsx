@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AiFillCloseCircle } from "react-icons/ai";
-import variants from "./variants";
 
 const CTA = () => {
   const [email, setEmail] = useState("");
@@ -37,7 +36,6 @@ const CTA = () => {
           className="Bodoni sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white"
           initial="hidden"
           animate="visible"
-          variants={variants}
           transition={{ duration: 0.5 }}
         >
           Whip up something special
@@ -46,7 +44,6 @@ const CTA = () => {
           className="leading-relaxed mb-4 text-base"
           initial="hidden"
           animate="visible"
-          variants={variants}
           transition={{ duration: 0.7 }}
         >
           join our exclusive recipe community by subscribing to our monthly
@@ -61,7 +58,6 @@ const CTA = () => {
             }-500 rounded-b text-green-900 px-4 py-3 shadow-md mb-4`}
             initial="hidden"
             animate="visible"
-            variants={variants}
             transition={{ duration: 0.7 }}
           >
             <div className="flex justify-between items-center">
